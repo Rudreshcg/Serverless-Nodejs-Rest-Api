@@ -1,0 +1,36 @@
+service: nodejs-lambda-crud-api
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 900
+
+functions:
+
+  function1:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: get
+
+  userRegister:
+    handler: handler.userRegister
+    events:
+      - http:
+          path: /register/
+          method: post
+  
+  loginUser:
+    handler: handler.loginUser
+    events:
+      - http:
+          path: /login/
+          method: post
+
+        
