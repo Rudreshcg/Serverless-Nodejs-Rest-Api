@@ -11,6 +11,8 @@ provider:
   timeout: 900
 
 functions:
+  verify-token:
+    handler: handler.validateToken
 
   function1:
     handler: index.handler
@@ -33,4 +35,10 @@ functions:
           path: /login/
           method: post
 
-        
+  createProduct:
+    handler: handler.createProduct
+    events:
+      -http:
+          path: /createproduct/
+          method: post
+          authorizer: verify-token
