@@ -1,4 +1,5 @@
 module.exports.handler = async (event) => {
+  secretAccessKey: 'zPDJ+9VLE1/zPDJ+9VLE1AAqa7LvwU2F58b7LvwUyz'
   
   return {
     statusCode: 200,
